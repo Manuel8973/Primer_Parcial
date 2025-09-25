@@ -21,6 +21,73 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <footer class="footer mt-auto py-3 bg-light border-top">
+                                    <div class="container text-center">
+                                        <span class="text-muted">&copy; 2025 - PrimerParcial</span>
+                                    </div>
+                                </footer>
+                                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                                    <div class="container-fluid">
+                                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PrimerParcial</a>
+                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                        <div class="collapse navbar-collapse" id="navbarNav">
+                                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" asp-area="" asp-controller="Categories" asp-action="Index">Categorías</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" asp-area="" asp-controller="Recipes" asp-action="Index">Recetas</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" asp-area="" asp-controller="Ingredients" asp-action="Index">Ingredientes</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                                @inherits LayoutComponentBase
+
+                                <div class="page">
+                                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand" href="">PrimerParcial</a>
+                                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                                <span class="navbar-toggler-icon"></span>
+                                            </button>
+                                            <div class="collapse navbar-collapse" id="navbarNav">
+                                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                                    <li class="nav-item">
+                                                        <NavLink class="nav-link" href="">Inicio</NavLink>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <NavLink class="nav-link" href="categories">Categorías</NavLink>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <NavLink class="nav-link" href="recipes">Recetas</NavLink>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <NavLink class="nav-link" href="ingredients">Ingredientes</NavLink>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                    <div class="container mt-4">
+                                        @Body
+                                    </div>
+                                    <footer class="footer mt-auto py-3 bg-light border-top">
+                                        <div class="container text-center">
+                                            <span class="text-muted">&copy; 2025 - PrimerParcial</span>
+                                        </div>
+                                    </footer>
+                                </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
