@@ -29,4 +29,18 @@ namespace PrimerParcial.Models
         // Relación con ingredientes
         public ICollection<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
     }
+    public class Ingredient
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string Quantity { get; set; }
+
+        // Clave foránea y navegación a Recipe
+        public int RecipeId { get; set; }
+        public Recipe Recipe { get; set; }
+    }
 }
