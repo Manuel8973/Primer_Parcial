@@ -1,21 +1,32 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PrimerParcial.Models
 {
-    public class Category
+    public class Recipe
     {
-        // Clave Primaria (PK)
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Name { get; set; } // Ejemplo: "Postres", "Platos Principales"
+        [StringLength(100)]
+        public string Title { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
-        // --- Relaciones de Entity Framework Core ---
+        [Required]
+        public string Instructions { get; set; }
 
-        // Propiedad de Navegación: El lado 'muchos' para las Recetas en esta Categoría
-        public ICollection<Recipe> Recipes { get; set; } = new List<Recipe>();
+        public int PreparationTimeMinutes { get; set; }
+        public int Servings { get; set; }
+        public DateTime DateCreated { get; set; }
+
+        // Clave foránea y navegación a Category
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
+        // Relación con ingredientes
+        public ICollection<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
     }
 }
